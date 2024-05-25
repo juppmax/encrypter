@@ -1,6 +1,7 @@
 #include <iostream>
+#include <vector>
 
-void char_to_int_string(char input, int& char_interger) {
+void char_to_int_string(char input, int& char_integer) {
     switch(input){
         case 'a': case 'A': char_integer = 100; break;
         case 'b': case 'B': char_integer = 101; break;
@@ -36,7 +37,8 @@ void char_to_int_string(char input, int& char_interger) {
 int main(){
     char input;
     int pass_key;
-    int char_interger;
+    int char_integer;
+    std::vector<int> integers;
     /*std::cout << "pleas enter a key: ";
     std::cin >> pass_key;
     */
@@ -45,8 +47,15 @@ int main(){
         std::cin >> input;
         if(input == '9'){
             exit(0);
+        }else if(input == '4'){
+            for (int num : integers) {
+                std::cout << num << " ";
+            }
         }
-        char_to_int_string(input, char_interger);
-        std::cout << "your char id is: " << char_interger;
+        char_to_int_string(input, char_integer);
+        if(char_integer != -1){
+            integers.push_back(char_integer);
+        }
+        std::cout << "your char id is: " << char_integer << std::endl;
     }
 }
