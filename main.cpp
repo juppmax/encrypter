@@ -34,14 +34,25 @@ void char_to_int_string(char input, int& char_integer) {
             std::cout << "Only alphabetic characters are supported!" << std::endl;
     }
 }
+void encrypt_integer(int& char_integer, int& encrypted_char_integer, int& pass_key){
+    encrypted_char_integer = char_integer * pass_key;
+}
 int main(){
     char input;
-    int pass_key;
+    int pass_key = 0;
     int char_integer;
+    int encrypted_char_integer;
     std::vector<int> integers;
     /*std::cout << "pleas enter a key: ";
     std::cin >> pass_key;
     */
+    std::cout << "use key?: ";
+    std::cin >> input;
+    if(input == 'y' || input == 'Y'){
+        std::cout << "Pleas enter key: ";
+        std::cin >> pass_key;
+    }
+    std::cout << "\n";
     while(true){
         std::cout << "pleas enter char: ";
         std::cin >> input;
@@ -53,9 +64,14 @@ int main(){
             }
         }
         char_to_int_string(input, char_integer);
+        if(pass_key != 0){
+            encrypt_integer(char_integer, encrypted_char_integer, pass_key);
+            std::cout << "your secure char id is: " << encrypted_char_integer << std::endl;
+        }else{
+            std::cout << "your char id is: " << char_integer << std::endl;
+        }
         if(char_integer != -1){
             integers.push_back(char_integer);
         }
-        std::cout << "your char id is: " << char_integer << std::endl;
     }
 }
