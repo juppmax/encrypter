@@ -93,15 +93,13 @@ int main(){
         }else if(input == 'e'){
             if(position == 0){
                 clear();
-                while(true){
-                    std::cout << "Pleas enter sentence: ";
-                    std::cin >> input;
-                    char_to_int_string(input,char_integer, integers);
-                    for (int num : integers) {
+                std::cout << "Pleas enter sentence: ";
+                std::cin >> input;
+                char_to_int_string(input,char_integer, integers);
+                for (int num : integers) {
                     std::cout << num << " ";
-                    }
-                    std::cin >> input;
                 }
+                std::cin >> input;
             }
         }
         if(input == '9'){
