@@ -79,6 +79,7 @@ int main(){
     }
     std::cout << "\n";
     while(true){
+        std::cin >> input;
         if(input == 's' && position == 0){
             position++;
         }else if(input == 'w' && position == 1){
@@ -91,15 +92,6 @@ int main(){
                 std::cout << num << " ";
             }
         }
-        char_to_int_string(input, char_integer);
-        if(pass_key != 0){
-            encrypt_integer(char_integer, encrypted_char_integer, pass_key);
-            std::cout << "your secure char id is: " << encrypted_char_integer << std::endl;
-        }else{
-            std::cout << "your char id is: " << char_integer << std::endl;
-        }
-        if(char_integer != -1){
-            integers.push_back(char_integer);
-        }
+        dram_menu1(position);
     }
 }
