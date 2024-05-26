@@ -100,6 +100,7 @@ int main(){
                     for (int num : integers) {
                     std::cout << num << " ";
                     }
+                    cin >> input;
                 }
             }
         }
