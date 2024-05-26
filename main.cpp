@@ -9,7 +9,7 @@ void clear(){
     #endif
 }
 
-void char_to_int_string(char input, int& char_integer) {
+void char_to_int_string(char input, int& char_integer, std::vector<int>& integers) {
     switch(input){
         case 'a': case 'A': char_integer = 100; break;
         case 'b': case 'B': char_integer = 101; break;
@@ -41,6 +41,7 @@ void char_to_int_string(char input, int& char_integer) {
             char_integer = -1;
             std::cout << "Only alphabetic characters are supported!" << std::endl;
     }
+    integers.push_back(char_integer);
 }
 void encrypt_integer(int& char_integer, int& encrypted_char_integer, int& pass_key){
     encrypted_char_integer = char_integer * pass_key;
@@ -91,12 +92,14 @@ int main(){
             position--;
         }else if(input == 'e'){
             if(position == 0){
+                clear();
                 while(true){
-                    clear();
                     std::cout << "Pleas enter sentence: ";
                     std::cin >> input;
                     char_to_int_string(input,char_integer);
-                    std::cin.ignore();
+                    for (int num : integers) {
+                    std::cout << num << " ";
+                    }
                 }
             }
         }
