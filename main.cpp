@@ -79,9 +79,9 @@ int main(){
     }
     std::cout << "\n";
     while(true){
-        if(input == "s" && position == 0){
+        if(input == 's' && position == 0){
             position++;
-        }else if(input == "w" && position == 1){
+        }else if(input == 'w' && position == 1){
             position--;
         }
         if(input == '9'){
