@@ -60,6 +60,8 @@ void dram_menu1(int& position){
     }else{
     std::cout << ("# [ ] crypt                                    #") << std::endl;
     }
+    std::cout << ("#                                              #") << std::endl;
+    std::cout << ("################################################") << std::endl;
 }
 int main(){
     char input;
