@@ -1,6 +1,14 @@
 #include <iostream>
 #include <vector>
 
+void clear(){
+    #ifdef WIN32
+    std::system("cls");
+    #else
+    std::system("clear");
+    #endif
+}
+
 void char_to_int_string(char input, int& char_integer) {
     switch(input){
         case 'a': case 'A': char_integer = 100; break;
@@ -37,8 +45,25 @@ void char_to_int_string(char input, int& char_integer) {
 void encrypt_integer(int& char_integer, int& encrypted_char_integer, int& pass_key){
     encrypted_char_integer = char_integer * pass_key;
 }
+
+void dram_menu1(int& position){
+    clear();
+    std::cout << ("################################################") << std::endl;
+    std::cout << ("#                                              #") << std::endl;
+    if(position == "0"){
+    std::cout << ("# [*] encrypt                                  #") << std::endl;
+    }else{
+    std::cout << ("# [ ] encrypt                                  #") << std::endl;
+    }
+    if(position == "1"){
+    std::cout << ("# [*] crypt                                    #") << std::endl;
+    }else{
+    std::cout << ("# [ ] crypt                                    #") << std::endl;
+    }
+}
 int main(){
     char input;
+    int position = 0;
     int pass_key = 0;
     int char_integer;
     int encrypted_char_integer;
@@ -54,8 +79,11 @@ int main(){
     }
     std::cout << "\n";
     while(true){
-        std::cout << "pleas enter char: ";
-        std::cin >> input;
+        if(input == "s" && position == 0){
+            position++;
+        }else if(input == "w" && position == 1){
+            position--;
+        }
         if(input == '9'){
             exit(0);
         }else if(input == '4'){
