@@ -50,12 +50,12 @@ void dram_menu1(int& position){
     clear();
     std::cout << ("################################################") << std::endl;
     std::cout << ("#                                              #") << std::endl;
-    if(position == "0"){
+    if(position == 0){
     std::cout << ("# [*] encrypt                                  #") << std::endl;
     }else{
     std::cout << ("# [ ] encrypt                                  #") << std::endl;
     }
-    if(position == "1"){
+    if(position == 1){
     std::cout << ("# [*] crypt                                    #") << std::endl;
     }else{
     std::cout << ("# [ ] crypt                                    #") << std::endl;
