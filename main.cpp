@@ -96,7 +96,7 @@ int main(){
                 while(true){
                     std::cout << "Pleas enter sentence: ";
                     std::cin >> input;
-                    char_to_int_string(input,char_integer);
+                    char_to_int_string(input,char_integer, integers);
                     for (int num : integers) {
                     std::cout << num << " ";
                     }
