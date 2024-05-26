@@ -96,7 +96,7 @@ int main(){
                     std::cout << "Pleas enter sentence: ";
                     std::cin >> input;
                     char_to_int_string(input,char_integer);
-                    std::getline();
+                    std::getline(cin);
                 }
             }
         }
