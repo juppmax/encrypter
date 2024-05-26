@@ -46,7 +46,7 @@ void encrypt_integer(int& char_integer, int& encrypted_char_integer, int& pass_k
     encrypted_char_integer = char_integer * pass_key;
 }
 
-void dram_menu1(int& position){
+void draw_menu1(int& position){
     clear();
     std::cout << ("################################################") << std::endl;
     std::cout << ("#                                              #") << std::endl;
@@ -66,6 +66,7 @@ void dram_menu1(int& position){
 int main(){
     char input;
     int position = 0;
+    int screen = 0;
     int pass_key = 0;
     int char_integer;
     int encrypted_char_integer;
@@ -80,12 +81,23 @@ int main(){
         std::cin >> pass_key;
     }
     std::cout << "\n";
+
     while(true){
+        draw_menu1(position);
         std::cin >> input;
         if(input == 's' && position == 0){
             position++;
         }else if(input == 'w' && position == 1){
             position--;
+        }else if(input == 'e'){
+            if(position == 0){
+                while(true){
+                    clear();
+                    std::cout << "Pleas enter sentence: ";
+                    std::cin >> input;
+                    char_to_int_string(input,char_integer);
+                }
+            }
         }
         if(input == '9'){
             exit(0);
@@ -94,6 +106,5 @@ int main(){
                 std::cout << num << " ";
             }
         }
-        dram_menu1(position);
     }
 }
