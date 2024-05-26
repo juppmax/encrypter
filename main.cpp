@@ -71,9 +71,9 @@ int main(){
     int char_integer;
     int encrypted_char_integer;
     std::vector<int> integers;
-    /*std::cout << "pleas enter a key: ";
-    std::cin >> pass_key;
-    */
+    
+    clear();
+
     std::cout << "use key?: ";
     std::cin >> input;
     if(input == 'y' || input == 'Y'){
@@ -96,6 +96,7 @@ int main(){
                     std::cout << "Pleas enter sentence: ";
                     std::cin >> input;
                     char_to_int_string(input,char_integer);
+                    std::getline();
                 }
             }
         }
