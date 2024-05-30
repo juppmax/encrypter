@@ -1,0 +1,13 @@
+CXX := g++
+CXXFLAGS := -std=c++17 -Wall
+
+all: myapp
+
+myapp: main.o
+	$(CXX) $(CXXFLAGS) -o myapp main.o
+
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+clean:
+	rm -f *.o myapp
